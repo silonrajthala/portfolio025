@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "./ui/button"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Instagram } from "lucide-react"
 
 export default function Hero() {
   const handleContactClick = () => {
@@ -32,7 +32,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="mx-auto max-w-2xl text-xl text-muted-foreground"
         >
-          A passionate full-stack developer specializing in creating beautiful and functional web experiences.
+          A passionate Web developer specializing in creating beautiful and functional web experiences.
         </motion.p>
 
         <motion.div
@@ -57,20 +57,26 @@ export default function Hero() {
           className="flex justify-center space-x-4 pt-6"
         >
           <Button variant="ghost" size="icon" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://github.com/silonrajthala" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <Github className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/silon-rajthala-6b0182221" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href="mailto:contact@example.com" aria-label="Email">
+            <a href="https://instagram.com/itzmesilon__" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> 
+              <Instagram className="h-5 w-5" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <a href="mailto:seelon.rajtha.7@gmail.com.com" aria-label="Email">
               <Mail className="h-5 w-5" />
             </a>
           </Button>
+          
         </motion.div>
       </div>
 

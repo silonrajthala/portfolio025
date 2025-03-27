@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
@@ -10,6 +9,8 @@ import { Textarea } from "./ui/textarea"
 import { Button } from "./ui/button"
 import { Label } from "./ui/label"
 import { MapPin, Mail, Phone } from "lucide-react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -26,25 +27,6 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   setIsSubmitting(true)
-
-  //   // Simulate form submission
-  //   await new Promise((resolve) => setTimeout(resolve, 1000))
-
-  //   // Reset form
-  //   setFormData({
-  //     name: "",
-  //     email: "",
-  //     subject: "",
-  //     message: "",
-  //   })
-  //   setIsSubmitting(false)
-
-  //   // Show success message (in a real app, you'd handle this better)
-  //   alert("Message sent successfully!")
-  // }
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -64,10 +46,10 @@ export default function Contact() {
   
       // Reset form and show success message
       setFormData({ name: "", email: "", subject: "", message: "" });
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!");
     } catch (error) {
       console.error("Error sending email:", error);
-      alert("Failed to send message. Please try again later.");
+      toast.error("Failed to send message. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -98,6 +80,7 @@ export default function Contact() {
 
   return (
     <div className="container mx-auto">
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Contact Me</h2>
         <div className="mt-2 h-1 w-20 bg-primary mx-auto"></div>
@@ -243,4 +226,3 @@ export default function Contact() {
     </div>
   )
 }
-

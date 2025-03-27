@@ -26,34 +26,26 @@ export default function Footer() {
             <ArrowUp className="h-5 w-5" />
           </Button>
 
-          <div className="mb-6 text-center">
-            <Link href="#home" className="text-xl font-bold text-primary">
-              Portfolio
-            </Link>
-            <p className="mt-2 text-sm text-muted-foreground">Creating beautiful and functional web experiences.</p>
-          </div>
-
           <div className="mb-8 flex space-x-4">
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="mailto:contact@example.com" aria-label="Email">
-                <Mail className="h-5 w-5" />
-              </a>
-            </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <a href="https://github.com/silonrajthala" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <Github className="h-5 w-5" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <a href="https://linkedin.com/in/silon-rajthala-6b0182221" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <a href="mailto:seelon.rajtha.7@gmail.com.com" aria-label="Email">
+              <Mail className="h-5 w-5" />
+            </a>
+          </Button>
           </div>
 
           <div className="text-center text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} CLON . All rights reserved.</p>
-            <p className="mt-1">Built with Next.js, Tailwind CSS, and Framer Motion.</p>
           </div>
         </div>
       </div>

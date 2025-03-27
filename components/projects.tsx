@@ -7,72 +7,79 @@ import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
 import { ExternalLink, Github } from "lucide-react"
 
+// Sample project data
 const projects = [
   {
     id: 1,
     title: "Fitness",
-    description:
-      "A Fitness website is a fitness information, class schedules,membership options, and tools to help users achieve their fitness goals",
+    description: "A Fitness website is a fitness information, class schedules, membership options, and tools to help users achieve their fitness goals.",
     image: "/fitness.png?height=300&width=500",
-    tags: ["React", "Vanila CSS" ,"React DOM"],
+    tags: ["React", "Vanilla CSS", "React DOM"],
     demoUrl: "https://fitness-website-teal.vercel.app/",
     githubUrl: "https://github.com/silonrajthala/fitnessWebsite",
     category: "web",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team collaboration features.",
-    image: "/placeholder.svg?height=300&width=500",
-    tags: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    title: "Travel With Us",
+    description: "An online platform that allows users to book vehicles and hotels all in one package.",
+    image: "/travel.png?height=300&width=500",
+    tags: ["React", "Vanilla CSS"],
+    demoUrl: "https://travelwithus-sepia.vercel.app",
+    githubUrl: "https://github.com/silonrajthala/travelWithUs",
     category: "web",
   },
   {
     id: 3,
-    title: "Finance Dashboard",
-    description:
-      "An interactive dashboard for tracking personal finances with data visualization and budget planning tools.",
-    image: "/placeholder.svg?height=300&width=500",
-    tags: ["React", "D3.js", "Express", "PostgreSQL"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    title: "Ecommerce",
+    description: "Explore Fashion Store, your go-to online destination for exquisite clothing choices.",
+    image: "/ecom.png?height=300&width=500",
+    tags: ["React", "Tailwind CSS"],
+    demoUrl: "https://github.com/silonrajthala/ecommerceWebsite",
+    githubUrl: "https://ecommerce-website-mu-liard.vercel.app",
     category: "web",
   },
   {
     id: 4,
-    title: "Weather App",
-    description: "A mobile application that provides real-time weather forecasts and alerts based on user location.",
-    image: "/placeholder.svg?height=300&width=500",
-    tags: ["React Native", "Redux", "Weather API"],
+    title: "Mobile App",
+    description: "COMMING SOON",
+    image: "/mob.png?height=300&width=500",
+    tags: ["React Native", "Flutter"],
     demoUrl: "https://example.com",
     githubUrl: "https://github.com",
     category: "mobile",
   },
+  {
+    id: 5,
+    title: "UI/UX",
+    description: "COMMING SOON",
+    image: "/design.png?height=300&width=500",
+    tags: ["Figma", "Photoshop"],
+    demoUrl: "https://example.com",
+    githubUrl: "https://github.com",
+    category: "design",
+  },
 ]
 
-const categories = ["all", "web", "mobile", "design"]
+const categories = ["all", "web", "mobile", "design"] as const;
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState("all")
+  const [activeCategory, setActiveCategory] = useState<typeof categories[number]>("all");
+  const [key, setKey] = useState(0); // Key to force re-render
 
   const filteredProjects =
-    activeCategory === "all" ? projects : projects.filter((project) => project.category === activeCategory)
+    activeCategory === "all" ? projects : projects.filter((project) => project.category === activeCategory);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-    
-  }
+  // console.log("Active Category:", activeCategory);
+  // console.log("Filtered Projects:", filteredProjects);
+
+  const handleCategoryChange = (category: typeof categories[number]) => {
+    setActiveCategory(category);
+    setKey((prevKey) => prevKey + 1); // Change the key to force re-render
+  };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto" key={key}>
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">My Projects</h2>
         <div className="mt-2 h-1 w-20 bg-primary mx-auto"></div>
@@ -83,7 +90,6 @@ export default function Projects() {
 
       <motion.div
         className="flex justify-center mb-8"
-        variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
@@ -93,7 +99,7 @@ export default function Projects() {
             <Button
               key={category}
               variant={activeCategory === category ? "default" : "outline"}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               className="capitalize"
             >
               {category}
@@ -104,75 +110,68 @@ export default function Projects() {
 
       <motion.div
         className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        {filteredProjects.map((project) => (
-          <motion.div
-            key={project.id}
-            variants={{
-              hidden: { opacity: 0, y: 50 }, // Start from below
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 2, // Slow entering animation
-                  ease: [0.22, 1, 0.36, 1], // Custom easing
+        {filteredProjects.length === 0 ? (
+          <p>No projects found.</p>
+        ) : (
+          filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 2,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
                 },
-              },
-              exit: {
-                opacity: 0,
-                y: -50,
-                transition: {
-                  duration: 1, // Fast exiting animation
-                },
-              },
-            }}
-          >
-            <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-lg">
-              <div className="overflow-hidden relative">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
-                  // className="w-full h-48 object-cover transition-transform duration-300 hover:translate-y-[-100%]"
-               
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
+              }}
+            >
+              <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-lg">
+                <div className="overflow-hidden relative">
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </a>
-                </Button>
-                <Button size="sm" asChild>
-                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
-        ))}
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                  <Button variant="outline" size="sm" asChild>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      Code
+                    </a>
+                  </Button>
+                  <Button size="sm" asChild>
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Demo
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))
+        )}
       </motion.div>
     </div>
   )
 }
-

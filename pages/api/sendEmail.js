@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       html: `
         <html>
           <body>
-            <h1>Mail Form Submission</h1>
+            <h1>Mail Form WebSite message Submission</h1>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Message:</strong></p>
