@@ -94,7 +94,7 @@ export default function About() {
 
           <motion.div variants={itemVariantsRight}>
             <Button className="mt-6" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/CV032025.pdf" download>
                 <FileText className="mr-2 h-4 w-4" />
                 Download Resume
               </a>
