@@ -26,15 +26,20 @@ const softSkills = [
 
 const skillIcons = [
   "laravel",
+  "php",
   "html",
   "css",
   "js",
   "jquery",
   "react",
   "tailwind",
+  "postgres",
+  "postman",
+  "cs",
   "flutter",
   "dart",
   "firebase",
+  "nginx",
 ]
 
 export default function Skills() {
@@ -154,14 +159,14 @@ export default function Skills() {
       </div>
 
       <motion.div
-      className="mt-12"
+      className="mt-12 hidden md:flex"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.7 }}
     >
       {/* Skill Icons Section */}
-    <div className="logo flex flex-wrap justify-center sm:grid-cols-2 gap-4">
+    <div className="logo  flex flex-wrap justify-center gap-4">
       {skillIcons.map((skill) => (
         <motion.div
           key={skill}
