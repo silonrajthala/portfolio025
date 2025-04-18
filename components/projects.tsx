@@ -11,6 +11,16 @@ import { ExternalLink, Github } from "lucide-react"
 const projects = [
   {
     id: 1,
+    title: "Ticketing",
+    description: "This online ticketing system assigns a unique ticket number to each support request for easy tracking of progress and responses.",
+    image: "/ticket.png?height=300&width=500",
+    tags: ["OpenSource", "Paid Subscription"],
+    demoUrl: "https://osticketsct.supportsystem.com/",
+    githubUrl: "",
+    category: "web", 
+  },
+  {
+    id: 2,
     title: "Fitness",
     description: "A Fitness website is a fitness information, class schedules, membership options, and tools to help users achieve their fitness goals.",
     image: "/fitness.png?height=300&width=500",
@@ -20,7 +30,7 @@ const projects = [
     category: "web",
   },
   {
-    id: 2,
+    id: 3,
     title: "Travel With Us",
     description: "An online platform that allows users to book vehicles and hotels all in one package.",
     image: "/travel.png?height=300&width=500",
@@ -30,7 +40,7 @@ const projects = [
     category: "web",
   },
   {
-    id: 3,
+    id: 4,
     title: "Ecommerce",
     description: "Explore Fashion Store, your go-to online destination for exquisite clothing choices.",
     image: "/ecom.png?height=300&width=500",
@@ -40,7 +50,17 @@ const projects = [
     category: "web",
   },
   {
-    id: 4,
+    id: 6,
+    title: "CRMS",
+    description: "COMMING SOON",
+    image: "/cards.png?height=300&width=500",
+    tags: ["Laravel","Blade", "Jquery", "Bootstrap"],
+    demoUrl: "https://example.com",
+    githubUrl: "https://github.com",
+    category: "web",
+  },
+  {
+    id: 7,
     title: "Mobile App",
     description: "COMMING SOON",
     image: "/mob.png?height=300&width=500",
@@ -50,7 +70,7 @@ const projects = [
     category: "mobile",
   },
   {
-    id: 5,
+    id: 8,
     title: "UI/UX",
     description: "COMMING SOON",
     image: "/design.png?height=300&width=500",
