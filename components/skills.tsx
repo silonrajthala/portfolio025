@@ -12,7 +12,7 @@ const technicalSkills = [
   { name: "React", level: 53 },
   { name: "Bootstrap", level: 71 },
   { name: "Tailwind CSS", level: 44 },
-  { name: "MySql", level: 78 },
+  { name: "SQL", level: 78 },
 ]
 
 const softSkills = [

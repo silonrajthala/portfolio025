@@ -70,7 +70,7 @@ export default function About() {
           </motion.h3>
 
           <motion.p variants={itemVariantsRight} className="text-muted-foreground">
-            Passionate and driven computer engineering student with a solid academic foundation and a genuine love for technology. Committed to making a positive impact through innovative solutions while fostering personal growth and continuous learning. Known for being dedicated, reliable, and meticulous, with a deep understanding of computer architecture and operating systems. Actively seeking an internship opportunity to gain hands-on experience and expand my knowledge in the dynamic field of computer engineering.
+          I'm a computer engineering graduate with a genuine passion for technology, creativity, and continuous learning. While I enjoy coding and software development, I find fulfillment in every part of the process—from solving complex problems to exploring new ideas. I approach everything I do with curiosity, care, and a drive to grow, always aiming to make a meaningful impact through thoughtful and passionate work.
           </motion.p>
 
           <motion.div variants={itemVariantsRight} className="grid grid-cols-2 gap-4 pt-4">
@@ -94,7 +94,7 @@ export default function About() {
 
           <motion.div variants={itemVariantsRight}>
             <Button className="mt-6" asChild>
-              <a href="/CV032025.pdf" download>
+              <a href="/CV052025.pdf" download>
                 <FileText className="mr-2 h-4 w-4" />
                 Download Resume
               </a>
