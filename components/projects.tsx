@@ -10,16 +10,6 @@ import { ExternalLink, Github } from "lucide-react"
 // Sample project data
 const projects = [
   {
-    id: 1,
-    title: "Ticketing",
-    description: "This online ticketing system assigns a unique ticket number to each support request for easy tracking of progress and responses.",
-    image: "/ticket.png?height=300&width=500",
-    tags: ["OpenSource", "Paid Subscription"],
-    demoUrl: "https://osticketsct.supportsystem.com/",
-    githubUrl: "",
-    category: "web", 
-  },
-  {
     id: 2,
     title: "Fitness",
     description: "A Fitness website is a fitness information, class schedules, membership options, and tools to help users achieve their fitness goals.",
