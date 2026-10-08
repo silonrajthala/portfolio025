@@ -1,5 +1,3 @@
-Yes — if you want the **raw****`.md`****content**, use this for your `README.md`:
-
 ```
 # Personal Portfolio
 
