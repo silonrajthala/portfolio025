@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import { Button } from "./ui/button"
 import { ArrowRight, Github, Linkedin, Mail, Instagram } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa";
+
 
 export default function Hero() {
   const handleContactClick = () => {
@@ -66,6 +68,16 @@ export default function Hero() {
               <Linkedin className="h-5 w-5" />
             </a>
           </Button>
+          <Button variant="ghost" size="icon" asChild>
+          <a
+            href="https://wa.me/silonrajthala"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+            <FaWhatsapp className="h-5 w-5" />
+          </a>
+        </Button>
           <Button variant="ghost" size="icon" asChild>
             <a href="https://instagram.com/itzmesilon__" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> 
               <Instagram className="h-5 w-5" />
