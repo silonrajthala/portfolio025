@@ -36,9 +36,6 @@ const skillIcons = [
   "postgres",
   "postman",
   "cs",
-  "flutter",
-  "dart",
-  "firebase",
   "nginx",
 ]
 

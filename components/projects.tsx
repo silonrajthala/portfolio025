@@ -9,6 +9,16 @@ import { ExternalLink, Github } from "lucide-react"
 
 // Sample project data
 const projects = [
+    {
+    id: 1,
+    title: "Wanderlust",
+    description: "A travel web application designed to provide users with a platform to explore travel destinations.",
+    image: "/wanderlust.png?height=300&width=500",
+    tags: ["Laravel","Blade", "Jquery", "Bootstrap"],
+    demoUrl: "https://wanderlust-uzgw.onrender.com/",
+    githubUrl: "https://github.com/silonrajthala/Wanderlust",
+    category: "web",
+  },
   {
     id: 2,
     title: "Fitness",
